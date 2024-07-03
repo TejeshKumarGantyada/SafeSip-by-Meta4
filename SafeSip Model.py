@@ -15,7 +15,7 @@ def get_user_input():
 
 
 def make_prediction(values):
-    API_KEY = "fh3c-iGWuo91Ibmbz_oYy4orKtfKS45UXfFqY9zWI2D2"
+    API_KEY = "Y20GSzqSee0FtrKo34MlM5umSJvSeGmah1VGaT8PF1fW"
     token_response = requests.post('https://iam.cloud.ibm.com/identity/token', data={"apikey": API_KEY, "grant_type": 'urn:ibm:params:oauth:grant-type:apikey'})
     mltoken = token_response.json()["access_token"]
 
@@ -31,7 +31,7 @@ def make_prediction(values):
     }
 
     response_scoring = requests.post(
-        'https://us-south.ml.cloud.ibm.com/ml/v4/deployments/c9279248-db7c-41d9-945f-536771b01f5e/predictions?version=2021-05-01',
+        'https://us-south.ml.cloud.ibm.com/ml/v4/deployments/1fb5754c-dcf3-4b64-aca0-ea1a6ae57a22/predictions?version=2021-05-01',
         json=payload_scoring,
         headers=header
     )
